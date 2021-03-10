@@ -3,7 +3,7 @@
 static void	man_pos_width(char c, char **width)
 {
 	int	num;
-	
+
 	num = ft_atoi(*width) - 1;
 	while (num > 0)
 	{
@@ -11,13 +11,12 @@ static void	man_pos_width(char c, char **width)
 		num--;
 	}
 	ft_putchar_fd(c, 1);
-
 }
 
 static void	man_neg_width(char c, char **width)
 {
 	char	*aux;
-	int	num;
+	int		num;
 
 	aux = *width;
 	aux++;

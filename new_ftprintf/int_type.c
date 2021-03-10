@@ -37,7 +37,7 @@ static void	man_pos_width(int verif, char **itoa, char **width)
 			if (**width == '0' && **itoa != '0' && verif != 1)
 				ft_putchar_fd('0', 1);
 			else if (**width == '0' && ft_atoi(*itoa) == 0
-					&& ft_strlen(*itoa) == 1)
+				&& ft_strlen(*itoa) == 1)
 				ft_putchar_fd('0', 1);
 			else
 				ft_putchar_fd(' ', 1);

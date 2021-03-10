@@ -21,7 +21,7 @@ static int	pf_pct(va_list *ap, int ct, const char *format)
 int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
-	int	ct;
+	int		ct;
 
 	va_start(ap, format);
 	ct = 0;
