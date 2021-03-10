@@ -3,7 +3,7 @@
 static void	man_pre(char **output, char **pre)
 {
 	char	*aux;
-	int	num;
+	int		num;
 
 	(**pre) = '\0';
 	(*pre)++;
