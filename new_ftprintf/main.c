@@ -3,11 +3,11 @@
 int main(void)
 {
 
-	printf("|hello, %32s.|\n", NULL);
+	printf("|%0-8.5d|\n", 34);
 	printf("--------------------\n");
-	ft_printf("|hello, %32s.|\n", NULL);
+	ft_printf("|%0-8.5d|\n", 34);
 	printf("\n\n\n\n--------FIN--------\n\n\n");
 
-	//system("leaks a.out");
+	system("leaks a.out");
     return (0);
 }

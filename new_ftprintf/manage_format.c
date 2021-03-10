@@ -67,6 +67,8 @@ int	pf_man_fmt(va_list *ap, int ct, const char *format, char **width)
 		(*width) = ft_strdup("");
 	while (format[ct] == '0')
 		char_to_str(format[ct++], width);
+	while (format[ct] == '-')
+		char_to_str(format[ct++], width);
 	ct = manage_ast(ap, ct, format, width);
 	ct = manage_num(ct, format, width);
 	ct = pf_man_pre(ap, ct, format, width);

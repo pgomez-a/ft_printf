@@ -18,4 +18,8 @@ void	pf_find_pct(char **width);
 
 void	pf_find_str(va_list *ap, char **width);
 
+void	pf_find_int(va_list *ap, char **width);
+
+int		int_man_pre(char **itoa, char **pre);
+
 # endif
