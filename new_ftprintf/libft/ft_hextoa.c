@@ -6,7 +6,7 @@
 /*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 08:56:13 by pgomez-a          #+#    #+#             */
-/*   Updated: 2021/03/04 11:39:37 by pgomez-a         ###   ########.fr       */
+/*   Updated: 2021/03/10 13:12:49 by pgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static void	hex_to_pos(unsigned long n, char **str)
 		(*str)[len] = n + '7';
 }
 
-char	*ft_hextoa(unsigned long n, char **str)
+void	*ft_hextoa(unsigned long n, char **str)
 {
 	if (n >= 0)
 		hex_to_pos(n, str);

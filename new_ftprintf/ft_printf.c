@@ -16,6 +16,10 @@ static int	pf_pct(va_list *ap, int ct, const char *format)
 		pf_find_int(ap, &width);
 	else if (format[ct] == 'u')
 		pf_find_uns(ap, &width);
+	else if (format[ct] == 'x' || format[ct] == 'X')
+		pf_find_hex(ap, format[ct], &width);
+	else if (format[ct] == 'p')
+		find_ptr(ap, &width);
 	free(width);
 	return (ct + 1);
 }
