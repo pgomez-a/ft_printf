@@ -20,7 +20,7 @@ static void	man_pre(char **output, char **pre)
 	}
 }
 
-static void	man_pos_width(char **output, char **width)
+static void	str_pos_width(char **output, char **width)
 {
 	int num;
 
@@ -37,7 +37,7 @@ static void	man_pos_width(char **output, char **width)
 
 }
 
-static void	man_neg_width(char **output, char **width)
+static void	str_neg_width(char **output, char **width)
 {
 	char	*aux;
 	int	num;
@@ -68,8 +68,8 @@ void	pf_find_str(va_list *ap, char **width)
 	if (pre)
 		man_pre(&output, &pre);
 	if (**width == '-')
-		man_neg_width(&output, width);	
+		str_neg_width(&output, width);	
 	else
-		man_pos_width(&output, width);
+		str_pos_width(&output, width);
 	free(output);
 }

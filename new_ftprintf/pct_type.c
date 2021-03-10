@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-static void	man_pos_width(char **width)
+static void	pct_pos_width(char **width)
 {
 	int	num;
 
@@ -16,7 +16,7 @@ static void	man_pos_width(char **width)
 	ft_putchar_fd('%', 1);
 }
 
-static void	man_neg_width(char **width)
+static void	pct_neg_width(char **width)
 {
 	char	*aux;
 	int	num;
@@ -40,7 +40,7 @@ void	pf_find_pct(char **width)
 	if (pre)
 		*pre = '\0';
 	if (**width == '-')
-		man_neg_width(width);
+		pct_neg_width(width);
 	else
-		man_pos_width(width);
+		pct_pos_width(width);
 }

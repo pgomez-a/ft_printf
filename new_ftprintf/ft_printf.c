@@ -14,6 +14,8 @@ static int	pf_pct(va_list *ap, int ct, const char *format)
 		pf_find_str(ap, &width);
 	else if (format[ct] == 'd' || format[ct] == 'i')
 		pf_find_int(ap, &width);
+	else if (format[ct] == 'u')
+		pf_find_uns(ap, &width);
 	free(width);
 	return (ct + 1);
 }

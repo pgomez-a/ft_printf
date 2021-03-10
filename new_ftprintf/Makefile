@@ -1,4 +1,4 @@
-SRCS		= ft_printf.c manage_format.c manage_precision.c char_type.c pct_type.c str_type.c int_type.c int_type_pre.c
+SRCS		= ft_printf.c manage_format.c manage_precision.c char_type.c pct_type.c str_type.c int_type.c uns_type.c numbers_precision.c numbers_width.c
 
 
 OBJS		= $(SRCS:.c=.o)

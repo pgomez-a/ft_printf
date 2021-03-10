@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-static void	man_pos_width(char c, char **width)
+static void	char_pos_width(char c, char **width)
 {
 	int	num;
 
@@ -13,7 +13,7 @@ static void	man_pos_width(char c, char **width)
 	ft_putchar_fd(c, 1);
 }
 
-static void	man_neg_width(char c, char **width)
+static void	char_neg_width(char c, char **width)
 {
 	char	*aux;
 	int		num;
@@ -39,7 +39,7 @@ void	pf_find_char(va_list *ap, char **width)
 	if (pre)
 		*pre = '\0';
 	if (**width == '-')
-		man_neg_width(c, width);
+		char_neg_width(c, width);
 	else
-		man_pos_width(c, width);
+		char_pos_width(c, width);
 }
