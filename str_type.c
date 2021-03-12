@@ -6,7 +6,7 @@
 /*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:45:36 by pgomez-a          #+#    #+#             */
-/*   Updated: 2021/03/11 10:25:02 by pgomez-a         ###   ########.fr       */
+/*   Updated: 2021/03/12 08:55:06 by pgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	man_pre(char **output, char **pre)
 	}
 }
 
-static void	str_pos_width(char **output, char **width)
+static void	str_pos_width(char **output, char **width, int **result)
 {
 	int	num;
 
@@ -43,12 +43,14 @@ static void	str_pos_width(char **output, char **width)
 			ft_putchar_fd('0', 1);
 		else
 			ft_putchar_fd(' ', 1);
+		(**result) += 1;
 		num--;
 	}
 	ft_putstr_fd(*output, 1);
+	(**result) += ft_strlen(*output);
 }
 
-static void	str_neg_width(char **output, char **width)
+static void	str_neg_width(char **output, char **width, int **result)
 {
 	char	*aux;
 	int		num;
@@ -57,14 +59,16 @@ static void	str_neg_width(char **output, char **width)
 	aux++;
 	num = ft_atoi(aux) - ft_strlen(*output);
 	ft_putstr_fd(*output, 1);
+	(**result) += ft_strlen(*output);
 	while (num > 0)
 	{
 		ft_putchar_fd(' ', 1);
+		(**result) += 1;
 		num--;
 	}
 }
 
-void	pf_find_str(va_list *ap, char **width)
+void	pf_find_str(va_list *ap, char **width, int **result)
 {
 	char	*str;
 	char	*output;
@@ -79,8 +83,8 @@ void	pf_find_str(va_list *ap, char **width)
 	if (pre)
 		man_pre(&output, &pre);
 	if (**width == '-')
-		str_neg_width(&output, width);
+		str_neg_width(&output, width, result);
 	else
-		str_pos_width(&output, width);
+		str_pos_width(&output, width, result);
 	free(output);
 }

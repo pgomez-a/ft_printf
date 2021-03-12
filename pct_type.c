@@ -6,13 +6,13 @@
 /*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:45:21 by pgomez-a          #+#    #+#             */
-/*   Updated: 2021/03/11 10:24:58 by pgomez-a         ###   ########.fr       */
+/*   Updated: 2021/03/12 08:53:25 by pgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	pct_pos_width(char **width)
+static void	pct_pos_width(char **width, int **result)
 {
 	int	num;
 
@@ -23,12 +23,14 @@ static void	pct_pos_width(char **width)
 			ft_putchar_fd('0', 1);
 		else
 			ft_putchar_fd(' ', 1);
+		(**result) += 1;
 		num--;
 	}
 	ft_putchar_fd('%', 1);
+	(**result) += 1;
 }
 
-static void	pct_neg_width(char **width)
+static void	pct_neg_width(char **width, int **result)
 {
 	char	*aux;
 	int		num;
@@ -37,14 +39,16 @@ static void	pct_neg_width(char **width)
 	aux++;
 	num = ft_atoi(aux) - 1;
 	ft_putchar_fd('%', 1);
+	(**result) += 1;
 	while (num > 0)
 	{
 		ft_putchar_fd(' ', 1);
+		(**result) += 1;
 		num--;
 	}
 }
 
-void	pf_find_pct(char **width)
+void	pf_find_pct(char **width, int **result)
 {
 	char	*pre;
 
@@ -52,7 +56,7 @@ void	pf_find_pct(char **width)
 	if (pre)
 		*pre = '\0';
 	if (ft_strchr(*width, '-'))
-		pct_neg_width(width);
+		pct_neg_width(width, result);
 	else
-		pct_pos_width(width);
+		pct_pos_width(width, result);
 }
