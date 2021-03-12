@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   manage_format.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/11 08:44:34 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/03/11 10:25:12 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 static int	verif_errors(char c)
@@ -26,7 +38,7 @@ static int	manage_num(int ct, const char *format, char **width)
 	while (!verif_errors(format[ct]) && format[ct] != '.')
 	{
 		if (format[ct] < '0' || format[ct] > '9')
-			break;
+			break ;
 		char_to_str(format[ct++], width);
 	}
 	return (ct);
@@ -36,12 +48,12 @@ static int	manage_ast(va_list *ap, int ct, const char *format, char **width)
 {
 	char	*itoa;
 	char	*temp;
-	int	num;
+	int		num;
 
 	if (format[ct] == '*')
 	{
 		num = va_arg(*ap, int);
-		if ((*width)[0] == '-' && num < 0)
+		if (ft_strchr(*width, '-') && num < 0)
 			num *= -1;
 		itoa = ft_itoa(num);
 		temp = *width;
@@ -49,7 +61,6 @@ static int	manage_ast(va_list *ap, int ct, const char *format, char **width)
 		free(temp);
 		free(itoa);
 		return (ct + 1);
-
 	}
 	return (ct);
 }
