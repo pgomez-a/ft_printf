@@ -6,7 +6,7 @@
 /*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:44:17 by pgomez-a          #+#    #+#             */
-/*   Updated: 2021/03/12 10:01:48 by pgomez-a         ###   ########.fr       */
+/*   Updated: 2021/03/12 11:52:47 by pgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	pf_find_hex(va_list *ap, char c, char **width, int **result)
 	char			*pre;
 	int				verif;
 	int				len;
-	unsigned long	num;
+	unsigned int	num;
 
-	num = va_arg(*ap, unsigned long);
+	num = va_arg(*ap, unsigned int);
 	ft_hextoa(num, &hextoa);
 	if (c == 'x')
 	{
