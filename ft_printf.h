@@ -6,7 +6,7 @@
 /*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:44:09 by pgomez-a          #+#    #+#             */
-/*   Updated: 2021/03/12 08:50:14 by pgomez-a         ###   ########.fr       */
+/*   Updated: 2021/03/12 09:34:25 by pgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "./libft/libft.h"
 # include <stdarg.h>
+# include <stdio.h>
 
 int		ft_printf(const char *format, ...);
 

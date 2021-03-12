@@ -1,17 +1,11 @@
 #include "ft_printf.h"
 
-int main(void)
+int main()
 {
-	int	numOne;
-	int	numTwo;
-
-	numOne = printf("|%-1.4d|\n", 123);
-	printf("--------------------\n");
-	numTwo = ft_printf("|%-1.4d|\n", 123);
-	printf("\n\n-------------------\n\n");
-	printf("printf:    %d\n", numOne);
-	printf("ft_printf: %d\n", numTwo);
-	printf("\n\n\n\n--------FIN--------\n\n\n");
-	system("leaks a.out");
-    return (0);
+	int		i;
+	int		j;
+	i = printf("st: jaja[%30.10s] [%.3s] [%.30s] [%20s] [%30.10d] [%30d %.10d] [%30.10d] [%5.0d] [%30.10x] [%30x] [%.10x] [%30.10x] [%5.0x]\n", "jaime que", "jaime", "jaime", "jaime", 30, 30 , 303030, -303030, 0, 30, 30 , 303030, -303030, 0);
+	printf("sy: %d\n", i);
+	i = ft_printf("ft: jaja[%30.10s] [%.3s] [%.30s] [%20s] [%30.10d] [%30d %.10d] [%30.10d] [%5.0d] [%30.10x] [%30x] [%.10x] [%30.10x] [%5.0x]\n", "jaime que", "jaime", "jaime", "jaime", 30, 30 , 303030, -303030, 0, 30, 30 , 303030, -303030, 0);
+	printf("ft: %d\n", i);
 }
