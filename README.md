@@ -29,13 +29,13 @@ Although the use of printf consists of displaying a format string on the standar
 a function of type int. This return will be the number of characters you have printed on the screen, and not the number of characters in the format string.
 
 ### EXAMPLES OF USE
-Some examples of the use of our **ft_printf**, comparing it with the real **printf** and being **ft = output_printf** and **sy = output_ft_printf**:<br>
+Some examples of the use of our **ft_printf**, comparing it with the real **printf** and being **ft = output_printf** and **sy = output_ft_printf**:<br><br>
 <img width="200" align="left" alt="Regular case main" src="https://user-images.githubusercontent.com/74931024/111148223-aa5b7180-858b-11eb-89e5-a6be28b392f3.png">
 <img width="208" align="center" alt="Regular example main" src="https://user-images.githubusercontent.com/74931024/111148813-6157ed00-858c-11eb-8042-18a3dbfe252f.png">
 <br><br>
 <img width="200" alt="Regular case main" src="https://user-images.githubusercontent.com/74931024/111150357-4c7c5900-858e-11eb-939b-4a6aec33f1d7.png">
 <img width="220" alt="Regular example main" src="https://user-images.githubusercontent.com/74931024/111150535-80f01500-858e-11eb-81dc-e8c33982fd9e.png">
 <br><br>
-However, there are some particular cases that we must take into account, both when working with the computer memory and when making a correct cast: <br>
+However, there are some particular cases that we must take into account, both when working with the computer memory and when making a correct cast: <br><br>
 <img width="1733" alt="Special case main.c" src="https://user-images.githubusercontent.com/74931024/111147729-14bfe200-858b-11eb-84c9-8bd045af08cc.png">
 <img width="2225" alt="Special case example" src="https://user-images.githubusercontent.com/74931024/111147835-3325dd80-858b-11eb-82a4-a2ad7a18cf05.png">
