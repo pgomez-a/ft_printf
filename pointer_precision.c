@@ -19,34 +19,9 @@ static void	man_zero(char **itoa, char **pre)
 		free(*itoa);
 		(*itoa) = ft_strdup("");
 	}
-	else if (**pre != '-')
-		(**itoa) = ' ';
 }
 
-static void	man_neg_pre(char **itoa, char **pre)
-{
-	char	*aux;
-	char	*temp;
-	int		num_p;
-	int		len_i;
-
-	aux = ft_strdup(*itoa + 1);
-	num_p = ft_atoi(*pre);
-	len_i = ft_strlen(aux);
-	while (num_p > len_i)
-	{
-		temp = aux;
-		aux = ft_strjoin("0", aux);
-		free(temp);
-		num_p--;
-	}
-	temp = *itoa;
-	(*itoa) = ft_strjoin("-", aux);
-	free(temp);
-	free(aux);
-}
-
-int	int_man_pre(char **itoa, char **pre)
+int	ptr_man_pre(char **itoa, char **pre)
 {
 	char	*temp;
 	int		num_p;
@@ -56,8 +31,6 @@ int	int_man_pre(char **itoa, char **pre)
 	(*pre)++;
 	if (ft_atoi(*itoa) == 0 && (**pre <= '0' || **pre > '9'))
 		man_zero(itoa, pre);
-	else if (**itoa == '-')
-		man_neg_pre(itoa, pre);
 	else
 	{
 		num_p = ft_atoi(*pre);

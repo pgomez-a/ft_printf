@@ -6,7 +6,7 @@
 /*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:45:29 by pgomez-a          #+#    #+#             */
-/*   Updated: 2021/03/12 09:34:18 by pgomez-a         ###   ########.fr       */
+/*   Updated: 2021/03/12 13:03:01 by pgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,25 @@ static void	ptr_neg_width(char **pointer, char **width, int **result)
 	}
 }
 
+static int	look_for_dot(int len, char **pointer, char **pre, char **width)
+{
+	if (!ft_strchr(*width, '.') && len != -1)
+	{
+		(*pre) = (*pointer);
+		(*pointer) = ft_strjoin("0x", *pointer);
+		free(*pre);
+		return (-1);
+	}
+	else if (len == -2)
+	{
+		(*pre) = (*pointer);
+		(*pointer) = ft_strjoin("0x", *pointer);
+		free(*pre);
+		return (0);
+	}
+	return (0);
+}
+
 void	find_ptr(va_list *ap, char **width, int **result)
 {
 	char			*pointer;
@@ -64,22 +83,12 @@ void	find_ptr(va_list *ap, char **width, int **result)
 		pointer[len] = ft_tolower(pointer[len]);
 		len++;
 	}
-	if (!ft_strchr(*width, '.'))
-	{
-		len = -1;
-		pre = pointer;
-		pointer = ft_strjoin("0x", pointer);
-		free(pre);
-	}
+	len = look_for_dot(len, &pointer, &pre, width);
 	pre = ft_strchr(*width, '.');
 	if (pre)
-		int_man_pre(&pointer, &pre);
+		ptr_man_pre(&pointer, &pre);
 	if (len != -1)
-	{
-		pre = pointer;
-		pointer = ft_strjoin("0x", pointer);
-		free(pre);
-	}
+		len = look_for_dot(-2, &pointer, &pre, width);
 	if (ft_strchr(*width, '-'))
 		ptr_neg_width(&pointer, width, result);
 	else

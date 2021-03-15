@@ -19,7 +19,10 @@ static void	char_pos_width(char c, char **width, int **result)
 	num = ft_atoi(*width) - 1;
 	while (num > 0)
 	{
-		ft_putchar_fd(' ', 1);
+		if (**width == '0')
+			ft_putchar_fd('0', 1);
+		else
+			ft_putchar_fd(' ', 1);
 		(**result) += 1;
 		num--;
 	}
@@ -54,7 +57,7 @@ void	pf_find_char(va_list *ap, char **width, int **result)
 	pre = ft_strchr(*width, '.');
 	if (pre)
 		*pre = '\0';
-	if (**width == '-')
+	if (ft_strchr(*width, '-'))
 		char_neg_width(c, width, result);
 	else
 		char_pos_width(c, width, result);

@@ -55,7 +55,7 @@ static void	str_neg_width(char **output, char **width, int **result)
 	char	*aux;
 	int		num;
 
-	aux = *width;
+	aux = ft_strchr(*width, '-');
 	aux++;
 	num = ft_atoi(aux) - ft_strlen(*output);
 	ft_putstr_fd(*output, 1);
@@ -82,7 +82,7 @@ void	pf_find_str(va_list *ap, char **width, int **result)
 	pre = ft_strchr(*width, '.');
 	if (pre)
 		man_pre(&output, &pre);
-	if (**width == '-')
+	if (ft_strchr(*width, '-'))
 		str_neg_width(&output, width, result);
 	else
 		str_pos_width(&output, width, result);
