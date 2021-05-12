@@ -1,5 +1,5 @@
 # ft_printf
-<img width="1910" alt="Graded by Deepthought" src="https://user-images.githubusercontent.com/74931024/111147201-80ee1600-858a-11eb-91bf-08ce19846b36.png">
+<img width="1925" alt="ft_printf" src="https://user-images.githubusercontent.com/74931024/117971875-b3b64f80-b32a-11eb-84c6-6dcf5b12739a.png">
 
 The definition of this project is simple: replicate the workings of the famous **printf** function. Thanks to this, it won't be necessary for us to continue using
 **ft_putchar_fd** and **ft_putstr_fd** every time we want to display a character, a string of characters or a number on the screen.
