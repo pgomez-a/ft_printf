@@ -12,6 +12,28 @@ Up to now, every time we define the prototype of a function, we establish a seri
 the function. However, we can see that a function like printf can receive as many parameters as the user specifies.
 So how is it able to do this? The simple answer is found in the use of the **<stdarg.h>** library.
 
+### HOW TO USE FT_PRINTF?
+1. Clone ft_printf repository:
+
+       git clone https://github.com/pgomez-a/ft_printf.git && cd ft_printf
+
+2. Run <b>make</b> to create the static library <b>libftprintf.a</b>:
+
+       make
+
+3. Now, you can move the library wherever your project is, but the include of your main project should be the path of the ft_printf repository:
+
+       /* Suppose main.c is in the ft_printf repository */
+
+       #include "ft_printf.h"
+       
+       int main(void)
+       {
+
+4. Compile your program with the new library:
+
+       gcc main.c -L. -lftprintf
+
 ### <stdarg.h>
 This library will allow us to work with the use of functions capable of receiving a variable number of arguments.
 To do this, you will declare a new type of variable and three different macros:
